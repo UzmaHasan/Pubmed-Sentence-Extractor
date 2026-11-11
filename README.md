@@ -81,7 +81,7 @@ If spaCy or the English model is unavailable, the script automatically falls bac
 
 ## Configure domain groups
 
-**Before running the extractor, review `DOMAIN_GROUPS` in `pubmed_extractor.py`.** Only uncommented entries are active. In the supplied version, the active groups are `GENDER` and `TIDAL_VOLUME`; other biomedical groups are provided as commented-out examples.
+**Before running the extractor, review `DOMAIN_GROUPS` in `pubmed_extractor.py`.** Only uncommented entries are active. In the supplied version, the active groups are `AGE` and `DEATH`; other biomedical groups are provided as commented-out examples.
 
 ```python
 DOMAIN_GROUPS = {
@@ -210,4 +210,5 @@ README.md        # Project documentation
 This tool is designed to support **biomedical literature screening**, **causal-knowledge discovery research**, and the collection of **candidate evidence sentences** for subsequent human review or downstream analysis.
 
 The extracted sentences and labels should be treated as leads for further investigation rather than clinical conclusions, validated evidence grades, or ground-truth causal relationships.
+
 

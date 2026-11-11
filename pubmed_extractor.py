@@ -101,22 +101,22 @@ DOMAIN_GROUPS = {
     #     "Hb",
     #     "Hgb",
     # ],
-    # "AGE": [
-    #     "age",
-    #     "older age",
-    #     "advanced age",
-    #     "elderly",
-    #     "aging",
-    #     "aged",
-    # ],
-    "GENDER": [
-        "gender",
-        "sex",
-        "male",
-        "female",
-        "men",
-        "women",
+    "AGE": [
+        "age",
+        "older age",
+        "advanced age",
+        "elderly",
+        "aging",
+        "aged",
     ],
+    # "GENDER": [
+    #     "gender",
+    #     "sex",
+    #     "male",
+    #     "female",
+    #     "men",
+    #     "women",
+    # ],
     # "PEEP": [
     #     "PEEP",
     #     "positive end-expiratory pressure",
@@ -133,15 +133,15 @@ DOMAIN_GROUPS = {
     #     "fraction of inspired oxygen",
     #     "inspired oxygen fraction",
     # ],
-    # "DEATH": [
-    #     "death",
-    #     "mortality",
-    #     "in-hospital mortality",
-    #     "hospital mortality",
-    #     "survival",
-    #     "30-day mortality",
-    #     "ICU mortality",
-    # ],
+    "DEATH": [
+        "death",
+        "mortality",
+        "in-hospital mortality",
+        "hospital mortality",
+        "survival",
+        "30-day mortality",
+        "ICU mortality",
+    ],
     # "SPO2": [
     #     "SpO2",
     #     "oxygen saturation",
@@ -236,12 +236,12 @@ DOMAIN_GROUPS = {
     #     "PIP",
     #     "peak pressure",
     # ],
-    "TIDAL_VOLUME": [
-        "tidal volume",
-        "VT",
-        "lung-protective ventilation",
-        "low tidal volume",
-    ],
+    # "TIDAL_VOLUME": [
+    #     "tidal volume",
+    #     "VT",
+    #     "lung-protective ventilation",
+    #     "low tidal volume",
+    # ],
 }
 
 MIN_DISTINCT_GROUPS = 2
