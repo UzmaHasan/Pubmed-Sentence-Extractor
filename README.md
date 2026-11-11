@@ -1,4 +1,4 @@
-﻿# Causal Sentence Extraction from PubMed Papers
+﻿# Relevant Sentence Extraction from PubMed Papers
 
 A Python command-line tool for retrieving **PubMed abstracts** and extracting sentences that mention multiple user-defined biomedical concepts alongside **causal or associative language**.
 
