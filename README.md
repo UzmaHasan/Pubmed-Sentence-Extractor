@@ -155,8 +155,6 @@ The script writes a UTF-8 CSV file containing **one row per retained sentence**,
 | `sentence` | Extracted abstract sentence |
 | `url` | DOI link when available, otherwise the PubMed article link |
 
-For instance, a sentence such as *Sex was associated with tidal volume.* could be labeled with the groups `GENDER; TIDAL_VOLUME` and the associative cue `associated with`. This is an **illustrative sentence**, not an actual result returned by PubMed.
-
 A CSV containing only the header row is valid when no sentences pass the filters. Progress and row counts are printed to the terminal.
 
 ### Study design classification
