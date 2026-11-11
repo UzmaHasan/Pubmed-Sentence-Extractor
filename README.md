@@ -109,7 +109,7 @@ At least as many domain groups must be enabled as `MIN_DISTINCT_GROUPS`, or the 
 
 Create a `query.txt` file containing a PubMed search expression. Example queries are available in the folder named `sample_queries`. 
 
-**NOTE - Clinical Context:** Additional oxygenation-related and ICU-specific keywords were included in the PubMed search query to restrict the literature to the clinical context of oxygen therapy and critical care. Although each time the primary relationship of interest is between the variables of concern, for example, we want to extract papers that talk about relationship between the two variables such as **age and mortality**. The additional terms helped retrieve studies relevant to oxygenation and mortality outcomes among critically ill patients.
+**NOTE - Clinical Context:** Additional oxygenation-related and ICU-specific keywords were included in the PubMed search query to restrict the literature to the clinical context of oxygen therapy and critical care. Although each time the primary relationship of interest is between the variables of concern, for example, say we want to extract papers that talk about relationship between the two variables such as **age and mortality**. The additional terms helped retrieve studies relevant to oxygenation and mortality outcomes among critically ill patients.
 
 Run:
 
