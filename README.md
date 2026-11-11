@@ -1,4 +1,4 @@
-﻿# PubMed Causal & Associative Sentence Extractor
+﻿# Causal Sentence Extraction from PubMed Papers
 
 A Python command-line tool for retrieving **PubMed abstracts** and extracting sentences that mention multiple user-defined biomedical concepts alongside **causal or associative language**.
 
@@ -127,46 +127,17 @@ At least as many domain groups must be enabled as `MIN_DISTINCT_GROUPS`, or the 
 
 ## Usage
 
-### 1. Search PubMed using a query string
+### 1. Read a PubMed query from a text file
 
-```bash
-python pubmed_extractor.py \
-  --query '("tidal volume" OR "lung-protective ventilation") AND (sex OR gender)' \
-  --max-articles 250 \
-  --out results.csv
-```
-
-Use a query consistent with the active domain groups. `--max-articles` limits the number of PMIDs returned by the search; it does not guarantee that many matches in the output.
-
-### 2. Read a PubMed query from a text file
-
-Create a `query.txt` file containing a PubMed search expression, for example:
-
-```text
-("tidal volume" OR "lung-protective ventilation") AND (sex OR gender)
-```
+Create a `query.txt` file containing a PubMed search expression. Example queries are available in the folder named sample_queries
 
 Run:
 
 ```bash
-python pubmed_extractor.py --query-file query.txt --max-articles 1000 --out results.csv
+python pubmed_extractor.py --query-file query.txt --max-articles 10000 --out results.csv
 ```
 
-Alternatively, an existing `.txt` file can be passed directly with `--query`:
-
-```bash
-python pubmed_extractor.py --query query.txt --out results.csv
-```
-
-### 3. Analyze specific PubMed articles
-
-```bash
-python pubmed_extractor.py --pmids 12345678,23456789 --out selected_articles.csv
-```
-
-The PMID list takes precedence over any query. Replace the example PMIDs with real PubMed article IDs.
-
-### 4. Use an NCBI API key (optional)
+### 2. Use an NCBI API key (optional)
 
 ```bash
 python pubmed_extractor.py \
@@ -218,14 +189,13 @@ The script first maps publication types returned by PubMed into a predefined set
 
 The script recognizes patterns such as `n=250`, `patients (n=250)`, and `250 patients`. When several candidate numbers occur, it uses the **largest match**. This can misidentify the actual analytic sample size, so verify it against the full paper before using it in evidence weighting.
 
-## Important limitations
+## Important Points
 
 - **Abstracts only:** The extractor does not download or examine full-text articles.
 - **No causal verification:** Strong causal wording and associative wording are recorded separately; neither guarantees a true causal effect.
 - **Heuristic proximity:** A window hit may link unrelated terms, while valid relationships expressed across longer spans may be missed.
-- **Negation and hedging:** These are flagged in `hedge_or_neg`, but do not prevent a sentence from being included. The CSV does not have a separate boolean `negated` column in the current version.
+- **Negation and hedging:** These are flagged in `hedge_or_neg`, but do not prevent a sentence from being included.
 - **Study design and sample size:** Both are heuristic, and their accuracy depends on the available metadata and text.
-- **Search coverage:** `--max-articles` makes a single PubMed search request; the script does not paginate through all matching search results.
 - **PubMed XML parsing:** The implementation uses regular expressions to extract fields from returned XML and may not capture every complex or nested formatting case.
 - **Rate limits and connectivity:** Requests require network access and can fail when PubMed is unavailable or limits are exceeded. Fetch requests are made in batches of up to 200 PMIDs, with a short pause between batches.
 
@@ -234,11 +204,9 @@ The script recognizes patterns such as `n=250`, `patients (n=250)`, and `250 pat
 ```text
 .
 â”œâ”€â”€ pubmed_extractor.py       # PubMed search, sentence filtering, and CSV export
-â”œâ”€â”€ query.txt        # Optional user-created PubMed query file
+â”œâ”€â”€ query.txt        # User-created PubMed query file
 â””â”€â”€ README.md        # Project documentation
 ```
-
-`query.txt` is optional and must be created by the user if using `--query-file`.
 
 ## Intended use
 
