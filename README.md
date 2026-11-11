@@ -105,7 +105,7 @@ At least as many domain groups must be enabled as `MIN_DISTINCT_GROUPS`, or the 
 
 ## Usage
 
-### 1. Read a PubMed query from a text file
+### 1. Read a PubMed query from a text file to extract the required information
 
 Create a `query.txt` file containing a PubMed search expression. Example queries are available in the folder named `sample_queries`. 
 
