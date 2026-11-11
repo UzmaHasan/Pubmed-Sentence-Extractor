@@ -201,9 +201,9 @@ The script recognizes patterns such as `n=250`, `patients (n=250)`, and `250 pat
 
 ```text
 .
-â”œâ”€â”€ pubmed_extractor.py       # PubMed search, sentence filtering, and CSV export
-â”œâ”€â”€ query.txt        # User-created PubMed query file
-â””â”€â”€ README.md        # Project documentation
+pubmed_extractor.py       # PubMed search, sentence filtering, and CSV export
+query.txt        # User-created PubMed query file
+README.md        # Project documentation
 ```
 
 ## Intended use
