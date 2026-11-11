@@ -1,4 +1,4 @@
-# PubMed Causal & Associative Sentence Extractor
+﻿# PubMed Causal & Associative Sentence Extractor
 
 A Python command-line tool for retrieving **PubMed abstracts** and extracting sentences that mention multiple user-defined biomedical concepts alongside **causal or associative language**.
 
@@ -10,7 +10,7 @@ The extractor combines domain-specific synonym matching, cue-phrase detection, a
 
 - **PubMed search:** Search via a query string or a `.txt` query file, or supply a list of PubMed IDs (PMIDs).
 - **Abstract-only extraction:** Retrieve titles, abstracts, publication types, journal information, DOIs, and article links using NCBI E-utilities.
-- **Custom domain groups:** Define biomedical concepts and their synonyms directly in `Pubmed5.py`.
+- **Custom domain groups:** Define biomedical concepts and their synonyms directly in `pubmed_extractor.py`.
 - **Sentence-level filtering:** Require mentions from a specified number of distinct domain groups and at least one causal or associative cue.
 - **Proximity-aware filtering:** Require a cue within or near a short token window spanning tokens from two different domain groups.
 - **Language signals:** Capture strong causal expressions, associative expressions, hedging terms, and negation terms. Negated sentences are **retained**, not discarded.
@@ -83,7 +83,7 @@ If spaCy or the English model is unavailable, the script automatically falls bac
 
 ## Configure domain groups
 
-**Before running the extractor, review `DOMAIN_GROUPS` in `Pubmed5.py`.** Only uncommented entries are active. In the supplied version, the active groups are `GENDER` and `TIDAL_VOLUME`; other biomedical groups are provided as commented-out examples.
+**Before running the extractor, review `DOMAIN_GROUPS` in `pubmed_extractor.py`.** Only uncommented entries are active. In the supplied version, the active groups are `GENDER` and `TIDAL_VOLUME`; other biomedical groups are provided as commented-out examples.
 
 ```python
 DOMAIN_GROUPS = {
@@ -130,7 +130,7 @@ At least as many domain groups must be enabled as `MIN_DISTINCT_GROUPS`, or the 
 ### 1. Search PubMed using a query string
 
 ```bash
-python Pubmed5.py \
+python pubmed_extractor.py \
   --query '("tidal volume" OR "lung-protective ventilation") AND (sex OR gender)' \
   --max-articles 250 \
   --out results.csv
@@ -149,19 +149,19 @@ Create a `query.txt` file containing a PubMed search expression, for example:
 Run:
 
 ```bash
-python Pubmed5.py --query-file query.txt --max-articles 1000 --out results.csv
+python pubmed_extractor.py --query-file query.txt --max-articles 1000 --out results.csv
 ```
 
 Alternatively, an existing `.txt` file can be passed directly with `--query`:
 
 ```bash
-python Pubmed5.py --query query.txt --out results.csv
+python pubmed_extractor.py --query query.txt --out results.csv
 ```
 
 ### 3. Analyze specific PubMed articles
 
 ```bash
-python Pubmed5.py --pmids 12345678,23456789 --out selected_articles.csv
+python pubmed_extractor.py --pmids 12345678,23456789 --out selected_articles.csv
 ```
 
 The PMID list takes precedence over any query. Replace the example PMIDs with real PubMed article IDs.
@@ -169,7 +169,7 @@ The PMID list takes precedence over any query. Replace the example PMIDs with re
 ### 4. Use an NCBI API key (optional)
 
 ```bash
-python Pubmed5.py \
+python pubmed_extractor.py \
   --query-file query.txt \
   --api-key YOUR_NCBI_API_KEY \
   --out results.csv
@@ -206,7 +206,7 @@ The script writes a UTF-8 CSV file containing **one row per retained sentence**,
 | `sentence` | Extracted abstract sentence |
 | `url` | DOI link when available, otherwise the PubMed article link |
 
-For instance, a sentence such as *“Sex was associated with tidal volume.”* could be labeled with the groups `GENDER; TIDAL_VOLUME` and the associative cue `associated with`. This is an **illustrative sentence**, not an actual result returned by PubMed.
+For instance, a sentence such as *â€œSex was associated with tidal volume.â€* could be labeled with the groups `GENDER; TIDAL_VOLUME` and the associative cue `associated with`. This is an **illustrative sentence**, not an actual result returned by PubMed.
 
 A CSV containing only the header row is valid when no sentences pass the filters. Progress and row counts are printed to the terminal.
 
@@ -233,9 +233,9 @@ The script recognizes patterns such as `n=250`, `patients (n=250)`, and `250 pat
 
 ```text
 .
-├── Pubmed5.py       # PubMed search, sentence filtering, and CSV export
-├── query.txt        # Optional user-created PubMed query file
-└── README.md        # Project documentation
+â”œâ”€â”€ pubmed_extractor.py       # PubMed search, sentence filtering, and CSV export
+â”œâ”€â”€ query.txt        # Optional user-created PubMed query file
+â””â”€â”€ README.md        # Project documentation
 ```
 
 `query.txt` is optional and must be created by the user if using `--query-file`.
@@ -245,3 +245,4 @@ The script recognizes patterns such as `n=250`, `patients (n=250)`, and `250 pat
 This tool is designed to support **biomedical literature screening**, **causal-knowledge discovery research**, and the collection of **candidate evidence sentences** for subsequent human review or downstream analysis.
 
 The extracted sentences and labels should be treated as leads for further investigation rather than clinical conclusions, validated evidence grades, or ground-truth causal relationships.
+
