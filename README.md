@@ -107,7 +107,7 @@ At least as many domain groups must be enabled as `MIN_DISTINCT_GROUPS`, or the 
 
 ### 1. Read a PubMed query from a text file
 
-Create a `query.txt` file containing a PubMed search expression. Example queries are available in the folder named sample_queries
+Create a `query.txt` file containing a PubMed search expression. Example queries are available in the folder named `sample_queries`. **NOTE: Clinical Context:** Additional oxygenation-related and ICU-specific keywords were included in the PubMed search query to restrict the literature to the clinical context of oxygen therapy and critical care. Although each time the primary relationship of interest is between the variables of concer, such as **age and mortality** in the current code, these additional terms helped retrieve studies relevant to oxygenation and mortality outcomes among critically ill patients.
 
 Run:
 
