@@ -105,7 +105,7 @@ At least as many domain groups must be enabled as `MIN_DISTINCT_GROUPS`, or the 
 
 ## Usage
 
-### 1. Write a PubMed query to extract the required information
+### 1. Write the PubMed search query
 
 The `query.txt` file contains a PubMed search expression. Example queries are available in the folder named `sample_queries`. 
 
