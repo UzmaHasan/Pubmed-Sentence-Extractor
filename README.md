@@ -4,8 +4,6 @@ A Python command-line tool for retrieving **PubMed abstracts** and extracting se
 
 The extractor combines domain-specific synonym matching, cue-phrase detection, and a token-distance **window-hit filter** to identify potentially relevant statements for literature review and evidence screening. It also records article metadata, estimates study design, and extracts reported sample sizes when possible.
 
-> **Important:** This is a rule-based **candidate sentence extractor**, not a causal inference or causal relationship validation system. Words such as *associated with* do not establish causation, and extracted statements should be checked against their source articles.
-
 ## Features
 
 - **PubMed search:** Search via a query string or a `.txt` query file, or supply a list of PubMed IDs (PMIDs).
