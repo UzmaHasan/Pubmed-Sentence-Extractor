@@ -1,0 +1,18 @@
+(
+  oxygenation[tiab] OR hypoxemia[tiab] OR hypoxaemia[tiab] OR hyperoxia[tiab] OR
+  "oxygen therapy"[tiab] OR "supplemental oxygen"[tiab] OR "oxygen supplementation"[tiab] OR
+  SpO2[tiab] OR "oxygen saturation"[tiab] OR "pulse oximetry"[tiab] OR oximetry[tiab] OR
+  "peripheral oxygen saturation"[tiab] OR SaO2[tiab] OR PaO2[tiab] OR PaCO2[tiab] OR FiO2[tiab]
+)
+AND
+(
+  pH[tiab] OR "blood pH"[tiab] OR acidemia[tiab] OR acidaemia[tiab] OR alkalemia[tiab] OR alkalaemia[tiab] OR "acid-base"[tiab] OR "acid base"[tiab]
+)
+AND
+(
+  ICU[tiab] OR "intensive care"[tiab] OR "critical care"[tiab]
+)
+AND
+(
+  PaCO2[tiab] OR "arterial carbon dioxide tension"[tiab] OR "arterial partial pressure of carbon dioxide"[tiab] OR "partial pressure of carbon dioxide"[tiab]
+)

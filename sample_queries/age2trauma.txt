@@ -1,0 +1,18 @@
+(
+  oxygenation[tiab] OR hypoxemia[tiab] OR hypoxaemia[tiab] OR hyperoxia[tiab] OR
+  "oxygen therapy"[tiab] OR "supplemental oxygen"[tiab] OR "oxygen supplementation"[tiab] OR
+  SpO2[tiab] OR "oxygen saturation"[tiab] OR "pulse oximetry"[tiab] OR oximetry[tiab] OR
+  "peripheral oxygen saturation"[tiab] OR SaO2[tiab] OR PaO2[tiab] OR PaCO2[tiab] OR FiO2[tiab]
+)
+AND
+(
+  trauma[tiab] OR traumatic[tiab] OR "injury"[tiab] OR "polytrauma"[tiab] OR "multiple trauma"[tiab] OR "trauma patient*"[tiab]
+)
+AND
+(
+  ICU[tiab] OR "intensive care"[tiab] OR "critical care"[tiab]
+)
+AND
+(
+  age[tiab] OR aged[tiab] OR aging[tiab] OR elderly[tiab] OR "older adult*"[tiab] OR "older patient*"[tiab] OR geriatric*[tiab]
+)

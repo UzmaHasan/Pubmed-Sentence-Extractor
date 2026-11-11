@@ -1,0 +1,18 @@
+(
+  oxygenation[tiab] OR hypoxemia[tiab] OR hypoxaemia[tiab] OR hyperoxia[tiab] OR
+  "oxygen therapy"[tiab] OR "supplemental oxygen"[tiab] OR "oxygen supplementation"[tiab] OR
+  SpO2[tiab] OR "oxygen saturation"[tiab] OR "pulse oximetry"[tiab] OR oximetry[tiab] OR
+  "peripheral oxygen saturation"[tiab] OR SaO2[tiab] OR PaO2[tiab] OR PaCO2[tiab] OR FiO2[tiab]
+)
+AND
+(
+  smoker*[tiab] OR smoking[tiab] OR "tobacco use"[tiab] OR cigarette*[tiab] OR nicotine[tiab] OR "tobacco smoking"[tiab]
+)
+AND
+(
+  ICU[tiab] OR "intensive care"[tiab] OR "critical care"[tiab]
+)
+AND
+(
+  COPD[tiab] OR "chronic obstructive pulmonary disease"[tiab] OR "chronic obstructive lung disease"[tiab] OR emphysema[tiab] OR "chronic bronchitis"[tiab]
+)

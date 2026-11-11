@@ -1,0 +1,18 @@
+(
+  oxygenation[tiab] OR hypoxemia[tiab] OR hypoxaemia[tiab] OR hyperoxia[tiab] OR
+  "oxygen therapy"[tiab] OR "supplemental oxygen"[tiab] OR "oxygen supplementation"[tiab] OR
+  SpO2[tiab] OR "oxygen saturation"[tiab] OR "pulse oximetry"[tiab] OR oximetry[tiab] OR
+  "peripheral oxygen saturation"[tiab] OR SaO2[tiab] OR PaO2[tiab] OR PaCO2[tiab] OR FiO2[tiab]
+)
+AND
+(
+  death[tiab] OR mortality[tiab] OR "in-hospital mortality"[tiab] OR "hospital mortality"[tiab] OR survival[tiab] OR "30-day mortality"[tiab] OR "ICU mortality"[tiab]
+)
+AND
+(
+  ICU[tiab] OR "intensive care"[tiab] OR "critical care"[tiab]
+)
+AND
+(
+  FiO2[tiab] OR "fraction of inspired oxygen"[tiab] OR "inspired oxygen fraction"[tiab]
+)
