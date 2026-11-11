@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Abstract-only causal sentence extractor (NO EDGE LIST) with MANUAL DOMAIN GROUPS + WINDOW HIT.
+Abstract-only causal sentence extractor.
 
 UPDATED:
 - Supports --query-file query.txt (reads PubMed query from a file).
@@ -18,8 +18,7 @@ What it does:
 - Negation is NOT dropped; it is only flagged.
 
 Usage:
-  python Pubmed5.py --query-file query.txt --max-articles 10000 --out results.csv
-  python Pubmed5.py --query "(age OR elderly) AND (death OR mortality)" --max-articles 250 --out results.csv
+  python pubmed_extractor.py --query-file query.txt --max-articles 10000 --out results.csv
 """
 
 import argparse
@@ -46,7 +45,7 @@ except Exception:
 NCBI_BASE = "https://eutils.ncbi.nlm.nih.gov/entrez/eutils"
 
 # ================================================================
-# 1) MANUAL DOMAIN GROUPS (EDIT THIS EVERY TIME YOU WANT)
+# 1) DOMAIN GROUPS (EDIT THIS manually EVERY TIME you run the code, because every time only 2 domain groups should be active)
 # ================================================================
 DOMAIN_GROUPS = {
     # "COPD": [
