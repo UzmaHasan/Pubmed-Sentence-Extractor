@@ -83,26 +83,6 @@ If spaCy or the English model is unavailable, the script automatically falls bac
 
 **Before running the extractor, review `DOMAIN_GROUPS` in `pubmed_extractor.py`.** Only uncommented entries are active. In the supplied version, the active groups are `AGE` and `DEATH`; other biomedical groups are provided as commented-out examples.
 
-```python
-DOMAIN_GROUPS = {
-    "GENDER": [
-        "gender", "sex", "male", "female", "men", "women"
-    ],
-    "TIDAL_VOLUME": [
-        "tidal volume", "VT", "lung-protective ventilation", "low tidal volume"
-    ],
-}
-```
-
-Edit or add groups to focus on other clinical variables. For example:
-
-```python
-DOMAIN_GROUPS = {
-    "AGE": ["age", "older age", "elderly", "aged"],
-    "DEATH": ["death", "mortality", "survival", "ICU mortality"],
-}
-```
-
 Synonym matching is case-insensitive and supports single-word terms, multiword phrases with spaces/hyphens, and a trailing `*` for prefix matching (for example, `outcome*`).
 
 Update the filter settings in the same file as needed:
